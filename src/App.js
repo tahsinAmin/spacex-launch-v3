@@ -12,7 +12,10 @@ function App() {
   const [load, setLoad] = useState(5)
 
   useEffect(() => {
-    fetch('https://api.spacexdata.com/v3/launches').then(res => res.json()).then(data => setLaunches([...data]))
+    fetch('https://api.spacexdata.com/v3/launches').then(res => res.json()).then((data) => {
+      data.sort((a, b) => parseFloat(b.launch_year) - parseFloat(a.launch_year));
+      setLaunches([...data])
+    })
   }, [])
 
   const loadMore = () => {
@@ -37,6 +40,4 @@ function App() {
 
 export default App;
 
-// Search on how to make a searhbar work with react and redux
-// Set up the Mrgin
-// Add contents.
+
