@@ -36,3 +36,7 @@ function App() {
 }
 
 export default App;
+
+// Search on how to make a searhbar work with react and redux
+// Set up the Mrgin
+// Add contents.
