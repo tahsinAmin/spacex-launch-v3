@@ -1,7 +1,7 @@
 import React from 'react'
 import { ArrowRightIcon } from '@heroicons/react/solid'
 
-function Rocket({ launch }) {
+function LaunchCard({ launch }) {
    console.log(launch)
    return (
       <div className='p-2 flex flex-col justify-between border border-gray-500 h-48 w-48 rounded-md mx-auto'>
@@ -21,4 +21,4 @@ function Rocket({ launch }) {
 }
 
 
-export default Rocket
+export default LaunchCard
