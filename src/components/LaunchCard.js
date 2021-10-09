@@ -1,12 +1,12 @@
 import React from 'react'
 // import { ArrowRightIcon } from '@heroicons/react/solid'
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 function LaunchCard({ launch }) {
    // console.log(launch)
    return (
       <div>
-         {/* <Link to={`/launch/${launch.flight_number}`}> */}
+         <Link to={`/launch/${launch.flight_number}`}>
             <div className='text-gray-800 bg-gray-100 py-2 px-4 flex flex-col pb-4 justify-between border border-gray-500 h-96 w-72 rounded-md mx-auto'>
                <div className="">
                   <img src={launch.links.mission_patch_small} alt="Mission Patch" className='my-3 rounded-full h-12 mx-auto'/>
@@ -21,7 +21,7 @@ function LaunchCard({ launch }) {
                </div>
                <p className="text-xs text-gray-400">{new Date(''+ launch.launch_date_utc).toString().slice(0,15)}</p>
             </div>
-         {/* </Link> */}
+         </Link>
       </div>
    )
 }
