@@ -4,9 +4,10 @@ import axios from 'axios'
 export const fetchAsyncLaunches = createAsyncThunk(
   "launches/fetchAsyncLaunches",
   async () => {
+    const response = await axios.get('https://api.spacexdata.com/v3/launches?limit=50&offset=50');
 
-    const response = await axios.get('https://api.spacexdata.com/v3/launches?limit=10');
-    return response.data;
+    
+    return response.data.sort((a, b) => parseFloat(b.launch_year) - parseFloat(a.launch_year));
   }
 );
 

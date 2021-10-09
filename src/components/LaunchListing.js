@@ -8,10 +8,9 @@ function LaunchListing() {
    const launches = useSelector(getAllLaunches);
    const dispatch = useDispatch();
    const { count } = useSelector((state) => state.counter);
-   // console.log(launches);
    return(
       <div className="">
-         <div className='mx-auto grid grid-cols-2 gap-auto md:grid-cols-4 lg:grid-cols-6'>
+         <div className='mx-auto grid grid-cols-2 gap-auto gap-y-4 md:grid-cols-4 lg:grid-cols-5'>
          {launches.slice(0, count).map((launch, flight_number) => (
             <LaunchCard key={launch.flight_number} launch={launch} />
          ))}
