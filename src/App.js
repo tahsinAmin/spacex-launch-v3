@@ -34,3 +34,4 @@ export default App;
 
 // Learned
 // Leanred how to take the fetch data in a variable.
+// Showing data using redux.
