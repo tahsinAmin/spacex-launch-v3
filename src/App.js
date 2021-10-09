@@ -1,9 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import { increment, decrement, incrementByAmount } from './redux/counter';
-import Searchbar from './components/Searchbar';
-import LaunchListing from './components/LaunchListing';
+
 import './App.css';
 
 import Header from './components/Header'
@@ -13,33 +9,8 @@ import PageNotFound from './components/PageNotFound'
 import Footer from './components/Footer'
 
 function App() {
-  const [launches, setLaunches] = useState([]);
-  const { count } = useSelector((state) => state.counter);
-  const dispatch = useDispatch();
-  const [load, setLoad] = useState(6)
-
-  useEffect(() => {
-    fetch('https://api.spacexdata.com/v3/launches').then(res => res.json()).then((data) => {
-      data.sort((a, b) => parseFloat(b.launch_year) - parseFloat(a.launch_year));
-      setLaunches([...data])
-    })
-  }, [])
-
-  const loadMore = () => {
-    setLoad(load+6);
-    console.log(load)
-  }
-
   return (
-    <div className="App">
-        <Searchbar/>
-        <h1 className='text-4xl font-semibold'>the count is: {count}</h1>
-        <button className='border text-sm p-2' onClick={() => dispatch(increment())}>Increment</button>
-        <button className='border text-sm p-2' onClick={() => dispatch(decrement())}>Decrement</button>
-        <button className='border text-sm p-2' onClick={() => dispatch(incrementByAmount(33))}>Increment by 33</button>
-        <LaunchListing launches={launches} load={load}/>
-        <button className='border text-sm p-2' onClick={() => loadMore()}>Load More</button>
-
+    <div className="App bg-gray-600 h-scren">
         <Router>
           <Header/>
           <Switch>
@@ -55,3 +26,7 @@ function App() {
 
 export default App;
 
+// Search on how to make a searhbar work with react and redux
+// Set up the Mrgin
+// Add contents.
+// https://blog.bitsrc.io/how-to-set-up-airbnb-style-guide-for-react-projects-fc7dfb1f3d68
