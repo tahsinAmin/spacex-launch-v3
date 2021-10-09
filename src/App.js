@@ -9,15 +9,15 @@ import Footer from './components/Footer'
 function App() {
   return (
     <div className="App bg-gray-600 h-scren">
-      <Header/>
-        <Router>
-          <Switch>
-            <Route path='/' exact component={Home}></Route>
-            <Route path='/launch/:flight_number' component={LaunchDetail}/>
-            <Route component={PageNotFound}></Route>
-          </Switch>
-          <Footer/>
-        </Router>
+      <Router>
+        <Header/>
+        <Switch>
+          <Route path='/' exact component={Home}></Route>
+          <Route path='/launch/:flight_number' component={LaunchDetail}/>
+          <Route component={PageNotFound}></Route>
+        </Switch>
+        <Footer/>
+      </Router>
     </div>
   );
 }
