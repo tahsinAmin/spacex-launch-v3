@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { incrementByAmount } from '../features/counter/counterSlice';
 import Searchbar from './Searchbar';
 import LaunchListing from './LaunchListing';
-import {launches,addLaunches} from '../features/launches/launchSlice'
+import {addLaunches} from '../features/launches/launchSlice'
 import axios from 'axios'
 
 function Home() {
@@ -26,9 +26,8 @@ function Home() {
        const response = await axios.get('https://api.spacexdata.com/v3/launches').catch((err) => {
           console.log("Err: ", err);
        });
-       // console.log('The response from api', response);
        dispatch(addLaunches(response.data))
-       console.log(launches)
+      //  console.log(launches)
     }
     fetchLaunches();
  },);
