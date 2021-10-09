@@ -13,6 +13,6 @@ const launchSlice = createSlice({
    },
 });
 
-export const { addLaunches } = launchSlice.actions;
-export const getAlllaunches = (state) => state.launches.launches;
+export const { launches,addLaunches } = launchSlice.actions;
+export const getAllLaunches = (state) => state.launches.launches;
 export default launchSlice.reducer;

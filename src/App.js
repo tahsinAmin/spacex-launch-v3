@@ -24,7 +24,9 @@ function App() {
 
 export default App;
 
-// Search on how to make a searhbar work with react and redux
+// Search on how to make a searhbar work with react and redux (Learning)
 // Set up the Mrgin
 // Add contents.
-// https://blog.bitsrc.io/how-to-set-up-airbnb-style-guide-for-react-projects-fc7dfb1f3d68
+// https://blog.bitsrc.io/how-to-set-up-airbnb-style-guide-for-react-projects-fc7dfb1f3d68 (Learning)
+// Some doesn't have misison patch, need to do something about it later. (Learning)
+// whatever our launches array holding, we need to rename it and work with the dispatch for addLaunches
