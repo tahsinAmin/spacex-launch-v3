@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import Searchbar from './Searchbar';
 import LaunchListing from './LaunchListing';
 
 import { useDispatch } from 'react-redux';
@@ -11,8 +10,7 @@ function Home() {
     dispatch(fetchAsyncLaunches());
   },[dispatch]);
   return (
-    <div className="Home">
-       <Searchbar/>
+    <div className="Home mt-10 mx-4">
        <LaunchListing/>
     </div>
   );

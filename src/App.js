@@ -9,14 +9,14 @@ import Footer from './components/Footer'
 function App() {
   return (
     <div className="App bg-gray-600 h-scren">
+      <Header/>
         <Router>
-          <Header/>
           <Switch>
             <Route path='/' exact component={Home}></Route>
-            <Route path='/launch/:launchID' component={LaunchDetail}/>
+            <Route path='/launch/:flight_number' component={LaunchDetail}/>
             <Route component={PageNotFound}></Route>
           </Switch>
-          <Footer></Footer>
+          <Footer/>
         </Router>
     </div>
   );
